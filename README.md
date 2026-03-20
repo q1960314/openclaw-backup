@@ -4,16 +4,16 @@
 
 | 项目 | 值 |
 |------|-----|
-| **备份时间** | 2026-03-20 13:17 GMT+8 |
+| **备份时间** | 2026-03-20 13:23 GMT+8 |
 | **OpenClaw 版本** | 2026.2.26 |
 | **目标版本** | 2026.3.13 |
-| **备份大小** | 13.7 KB |
+| **备份大小** | 15 KB |
 
 ---
 
 ## 备份文件
 
-- `openclaw-backup-20260320-1317.tar.gz` - 完整配置备份
+- `openclaw-backup-20260320-1323.tar.gz` - 完整配置备份（包含技能和插件列表）
 
 ---
 
@@ -24,6 +24,28 @@
 - `AGENTS.md`, `SOUL.md`, `USER.md`, `TOOLS.md` 等工作区文件
 - 14 个 agent 的模型配置 (`agent-models/*.json`)
 - 记忆数据 (`memory/`)
+- `plugins-list.txt` - 已安装插件列表
+- `skills-list.txt` - 已安装技能列表
+- `RESTORE.md` - 恢复指南
+
+### 已启用的插件 (6 个)
+1. **Dashscope Config** - Dashscope 配置
+2. **DingTalk** - 钉钉通道 (3.1.4)
+3. **Memory (LanceDB Pro)** - 长期记忆 (1.1.0-beta.9)
+4. **QQ Bot** - QQ 机器人 (1.5.0)
+5. **WeCom** - 企业微信 (0.1.3)
+6. **Feishu** - 飞书通道 (2026.2.26)
+
+### 已安装技能 (22 个)
+**量化交易**: backtest-expert, fundamental-stock-analysis, market-sentiment-pulse, multi-factor-strategy, quant-trading-cn, trading-sop.md
+
+**记忆学习**: arxiv-skill-learning, learning, memory-lancedb-pro-skill, self-improving
+
+**任务管理**: task-flow, test-generator, code-review-fix
+
+**工具集成**: blogwatcher, find-skills, notion, obsidian, openclaw-github-assistant, openclaw-tavily-search, searxng
+
+**专业分析**: risk-management-specialist, technical-analyst
 
 ### 已配置功能
 
@@ -62,8 +84,8 @@
 
 ### 1. 下载备份
 ```bash
-wget https://github.com/q1960314/openclaw-backup/raw/main/openclaw-backup-20260320-1317.tar.gz
-tar -xzf openclaw-backup-20260320-1317.tar.gz
+wget https://github.com/q1960314/openclaw-backup/raw/main/openclaw-backup-20260320-1323.tar.gz
+tar -xzf openclaw-backup-20260320-1323.tar.gz
 cd openclaw-backup-final
 ```
 
@@ -90,6 +112,7 @@ done
 openclaw gateway restart
 openclaw memory-pro stats
 openclaw channels list
+openclaw plugins list
 ```
 
 ---
@@ -104,4 +127,4 @@ openclaw channels list
 ---
 
 **GitHub 仓库**: https://github.com/q1960314/openclaw-backup
-**备份时间**: 2026-03-20 13:17 GMT+8
+**备份时间**: 2026-03-20 13:23 GMT+8
